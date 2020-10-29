@@ -21,15 +21,65 @@ window.onload =  function(event) {
 
   // Part 1
 
+  const changeTitle = function () {
+    document.getElementById('main-title').textContent = "Dom Toretto";
+  };
+
+  changeTitle();
+  
   // Part 2
+
+  const changeBackgroundColor = function () {
+    document.body.style.backgroundColor = '#C05780';
+  }(); // note to self: adding parenthesis will call function automatically
 
   // Part 3
 
+  const favThings = function () {
+    document.getElementById('favorite-things').lastElementChild.remove();
+  }();
+
   // Part 4
+
+  const changeFontSize = function () {
+    let specialTitleElements = document.getElementsByClassName('special-title');
+    for(let i = 0; i<specialTitleElements.length; i++){
+      specialTitleElements[i].style.fontSize = '2rem';
+    }
+  }();
 
   // Part 5
 
+  const removeChicago = function () {
+    let pastRacesElements = document.getElementById('past-races').children;
+    for(let i = 0; i < pastRacesElements.length; i++){
+      if(pastRacesElements[i].textContent === 'Chicago'){
+        pastRacesElements[i].remove();
+      }
+    }
+  }();
+
   // Part 6
 
+  const addCity = function () {
+    let pastRaces = document.getElementById('past-races');
+    let newListElement = document.createElement('li');
+    newListElement.textContent = 'New York City';
+    pastRaces.appendChild(newListElement);
+  }();
+
   // Part 7
+
+  const newBlogpost = function () {
+    let blogPostContainer = document.getElementsByClassName('main')[0];
+    let newDiv = document.createElement('div');
+    let newH1 = document.createElement('h1');
+    let newP = document.createElement('p');
+    newH1.textContent = 'New York City';
+    newP.textContent = 'I JUMPED OVER THE STATUE OF LIBERTY!';
+    newDiv.className ='blog-post purple';
+    newDiv.appendChild(newH1);
+    newDiv.appendChild(newP);
+    blogPostContainer.appendChild(newDiv);
+  }();
 }
